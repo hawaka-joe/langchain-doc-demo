@@ -1,0 +1,17 @@
+[project]
+name = "langchain-doc-demo"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "zhouhw",email = "xxx@gmail.com"}
+]
+requires-python = ">=3.10,<4.0"
+dependencies = [
+    "langchain (>=1.2.13,<2.0.0)",
+    "langchain-deepseek (>=1.0.0,<2.0.0)",
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
