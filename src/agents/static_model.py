@@ -19,6 +19,6 @@ model = init_chat_model(
 agent = create_agent(model=model)
 
 result = agent.invoke(
-    {"messages": [HumanMessage("What is the capital of France?")]}
+    {"messages": [HumanMessage("who are you?")]}
 )
 print(result["messages"][-1].content)
