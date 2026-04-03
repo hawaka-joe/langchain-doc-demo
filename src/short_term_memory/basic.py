@@ -1,0 +1,21 @@
+import os
+
+from langchain.agents import create_agent
+from langchain.chat_models import init_chat_model
+from langchain.messages import HumanMessage
+from langgraph.checkpoint.memory import InMemorySaver
+
+model = init_chat_model(
+    "gemini-3-flash-preview-free",
+    model_provider="openai",
+    base_url="https://aihubmix.com/v1",
+    api_key=os.getenv("AIHUBMIX_API_KEY"),
+    temperature=0.7,
+)
+
+agent = create_agent(model=model, checkpointer=InMemorySaver())
+
+result = agent.invoke(
+    {"messages": [HumanMessage("who are you?")]}
+)
+print(result["messages"][-1].content)
